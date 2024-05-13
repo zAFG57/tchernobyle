@@ -1,0 +1,68 @@
+{
+    "listNoeud": [
+        {
+            "id": 0,
+            "function": 0,
+            "isInput": true,
+            "isOutput": false,
+            "nbPrecedent": 0,
+            "nbSuivant": 1,
+            "listLien": [
+                {
+                    "id": 2,
+                    "poid": 1,
+                    "biais": 0,
+                    "function": 0,
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "function": 0,
+            "isInput": true,
+            "isOutput": false,
+            "nbPrecedent": 0,
+            "nbSuivant": 1,
+            "listLien": [
+                {
+                    "id": 2,
+                    "poid": 1,
+                    "biais": 0,
+                    "function": 0,
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "function": 0,
+            "isInput": false,
+            "isOutput": false,
+            "nbPrecedent": 2,
+            "nbSuivant": 1,
+            "listLien": [
+                {
+                    "id": 3,
+                    "poid": 1,
+                    "biais": 0,
+                    "function": 0,
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "function": 0,
+            "isInput": false,
+            "isOutput": true,
+            "nbPrecedent": 0,
+            "nbSuivant": 1,
+            "listLien": [
+                {
+                    "id": 3,
+                    "poid": 1,
+                    "biais": 0,
+                    "function": 0,
+                }
+            ]
+        }
+    ]
+}
