@@ -1,8 +1,12 @@
+const Noeud = require('./Noeud.js');
 
-class NoeudSortie {
+class NoeudSortie extends Noeud {
 
-    constructor() {
-
+    constructor(noeud,ia) {
+        super(noeud,ia);
+    }
+    isOutput() {
+        return true;
     }
 }
 

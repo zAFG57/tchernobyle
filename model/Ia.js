@@ -1,8 +1,9 @@
 const Noeud = require('./Noeud.js');
 const NoeudEntrer = require('./NoeudEntrer.js');
 const NoeudSortie = require('./NoeudSortie.js');
+let error = require("../utils/internalIaFunction.js").error;
 
-class IA {
+class Ia {
     constructor(brain) {
         this.nbNodes = 0;
         this.nodes = {};
@@ -13,18 +14,32 @@ class IA {
             this.nbNodes ++;
             let node = null;
             if (n["isInput"]) {
-                node = /* nouveau noeud d'entrer */ null
-                this.inputNodes.push(i);
+                node = new NoeudEntrer(n,this);
+                this.inputNodes.push(n["id"]);
             }  else if (n["isOutput"]) {
-                node = /* nouveau noeud d'sortie */ null
-                this.outputNodes.push(i);
+                node = new NoeudSortie(n,this);
+                this.outputNodes.push(n["id"]);
             } else {
-                node = /* nouveau noeud */ null
+                node = new Noeud(n,this);
             }
-            this.nodes.push({"id":n["id"],"node": node });
+            this.nodes[n["id"]] = node;
+        }
+        for (let [k,n] of Object.entries(this.nodes)) {
+            n.updateLien();
         }
     }
+    
+    toJson() {
+        let brain = {};
+        let ln = [];
+        for (let [k,node] of Object.entries(this.nodes)) {
+            ln.push(node.toJson());
+        }
+        brain["listNoeud"] = ln;
+        return JSON.stringify(brain);
+    }
+
 
 }
 
-module.exports = IA
+module.exports = Ia

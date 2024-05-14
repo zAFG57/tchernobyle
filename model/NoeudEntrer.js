@@ -1,8 +1,12 @@
+const Noeud = require('./Noeud.js');
 
 class NoeudEntrer extends Noeud {
 
-    constructor() {
-
+    constructor(noeud,ia) {
+        super(noeud,ia);
+    }
+    isInput() {
+        return true;
     }
 }
 

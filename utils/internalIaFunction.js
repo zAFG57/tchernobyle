@@ -7,4 +7,9 @@ function getActivationFunction(id) {
    
 }
 
-module.exports = { getCumuleFunction, getActivationFunction };
+function error(message) {
+    console.log(message);
+    process.exit(1);
+}
+
+module.exports = { getCumuleFunction, getActivationFunction, error };
