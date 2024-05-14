@@ -1,6 +1,6 @@
 # Чорнобиль
-just a node.js IA project done for fun and without any pretensions
+just a node.js IA project done for fun
 
 ```
-have fun with it
+получайте удовольствие от этого
 ```
