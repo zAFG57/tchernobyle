@@ -17,5 +17,8 @@ try {
     process.exit(1);
 }
 
-let ia = new Ia(JSON.parse(data)); 
-
+let ia = new Ia(JSON.parse(data));
+ia.input([0,1]);
+console.log(ia.output());
+ia.compute();
+console.log(ia.output());

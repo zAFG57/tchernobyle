@@ -1,10 +1,10 @@
 
 function getCumuleFunction(id) {
-
+    return (value1,value2) => value1+value2
 }
 
 function getActivationFunction(id) {
-   
+   return (value) => {if(value>=0.5)return value;return 0;}
 }
 
 function error(message) {
@@ -12,4 +12,8 @@ function error(message) {
     process.exit(1);
 }
 
-module.exports = { getCumuleFunction, getActivationFunction, error };
+function randomElementArray(array) {
+    return array[Object.keys(array)[Math.round(Math.random() * array.length)]];
+}
+
+module.exports = { getCumuleFunction, getActivationFunction, error , randomElementArray};

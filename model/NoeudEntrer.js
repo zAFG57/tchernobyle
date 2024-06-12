@@ -8,6 +8,12 @@ class NoeudEntrer extends Noeud {
     isInput() {
         return true;
     }
+
+    startInputing() {
+        for (let [k,lien] of Object.entries(this.connexion)) {
+            lien.send(this.value);
+        }
+    }
 }
 
 module.exports = NoeudEntrer
