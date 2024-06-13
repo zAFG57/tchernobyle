@@ -56,6 +56,10 @@ class Ia {
         return ret;
     }
 
+    clone() {
+        return new Ia(JSON.parse(this.toJson()));
+    }
+ 
     compute() {
         for(let i in this.inputNodes) {
             this.nodes[i].startInputing();
@@ -67,12 +71,20 @@ class Ia {
     mutateBiais() {
         let node = randomElementArray(this.nodes);
         let lien = randomElementArray(node.connexion);
+        while(lien == undefined) {
+            node = randomElementArray(this.nodes);
+            lien = randomElementArray(node.connexion);
+        }
         lien.biais = Math.random();
     }
 
     mutatePoids() {
         let node = randomElementArray(this.nodes);
         let lien = randomElementArray(node.connexion);
+        while(lien == undefined) {
+            node = randomElementArray(this.nodes);
+            lien = randomElementArray(node.connexion);
+        }
         lien.poid = Math.random();
     }
 

@@ -13,7 +13,7 @@ function error(message) {
 }
 
 function randomElementArray(array) {
-    return array[Object.keys(array)[Math.round(Math.random() * array.length)]];
+    return array[Object.keys(array)[Math.floor(Math.random() * Object.keys(array).length)]];
 }
 
 module.exports = { getCumuleFunction, getActivationFunction, error , randomElementArray};
